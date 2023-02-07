@@ -8,7 +8,8 @@ import maskpass
 
 user = "selenium.testing@abv.bg"
 password = "pamporovo2023"
-inpt_text = input("Text for the post: ")
+commands = ["text", "photo/s", "video/s", "text and photo/s", "text and video/s"]
+command = input("What do you want to post? (text, photo/s, video/s, text and photo/s, text and video/s): ")
 driver = webdriver.Chrome()
 
 
@@ -49,7 +50,9 @@ def post_text(text):
 
 open_facebook()
 login(user, password)
-post_text(inpt_text)
+if command == "text":
+    inpt_text = input("Text for the post: ")
+    post_text(inpt_text)
 
 print("Done")
 input('Press anything to quit')
